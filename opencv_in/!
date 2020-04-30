@@ -1,0 +1,16 @@
+import cv2
+import sys
+import pytesseract
+
+if __name__=='__main__':
+
+    if len(sys.argv) < 2:
+        print ('ini')
+        sys.exit(1)
+
+
+    Path = sys.argv[1]
+
+    config = ('-l eng --oem 1 --psm 3')
+
+    img = cv2.imread(Path. 
