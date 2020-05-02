@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7020f0df-82c8-4d33-9edc-393506ecaf1a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RC/failsafeocr.py" beforeDir="false" afterPath="$PROJECT_DIR$/RC/failsafeocr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RC/image_generic.py" beforeDir="false" afterPath="$PROJECT_DIR$/RC/image_generic.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bIvIwoI6rMTMEFLhYakCHfu7Fy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7020f0df-82c8-4d33-9edc-393506ecaf1a" name="Default Changelist" comment="" />
+      <created>1588332347514</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588332347514</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="219" width="810" height="680" key="#Inspections" timestamp="1588416828049">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="555" y="219" width="810" height="680" key="#Inspections/0.30.1920.1050@0.30.1920.1050" timestamp="1588416828048" />
+    <state x="449" y="192" width="1022" height="733" key="SettingsEditor" timestamp="1588332458689">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="449" y="192" width="1022" height="733" key="SettingsEditor/0.30.1920.1050@0.30.1920.1050" timestamp="1588332458689" />
+    <state x="620" y="385" key="com.intellij.ide.util.TipDialog" timestamp="1588415875536">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="620" y="385" key="com.intellij.ide.util.TipDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1588415875536" />
+  </component>
+</project>
