@@ -1,6 +1,5 @@
 import glob
 import os
-import random
 import sys
 import random
 import math
@@ -16,12 +15,12 @@ from scipy.ndimage.filters import rank_filter
 def dilate(ary, N, iterations):
 
     kernel = np.zeros((N, N), dtype=np.uint8)
-    kernel[(N - 1) // 2, :] = 1  # Bug solved with // (integer division)
+    kernel[(N - 1) // 2, :] = 1
 
     dilated_image = cv2.dilate(ary / 255, kernel, iterations=iterations)
 
     kernel = np.zeros((N, N), dtype=np.uint8)
-    kernel[:, (N - 1) // 2] = 1  # Bug solved with // (integer division)
+    kernel[:, (N - 1) // 2] = 1
     dilated_image = cv2.dilate(dilated_image, kernel, iterations=iterations)
     return dilated_image
 

@@ -1,29 +1,29 @@
 import sys
 
 class cardline(object):
-    def __init__(self, alpha, left, top, right, bottom, page):
-        self.alpha = alpha
+    def __init__(self, text, left, up, right, down, page):
+        self.text = text
         self.right = int(right)
         self.left = int(left)
-        self.top = int(top)
-        self.bottom = int(bottom)
+        self.up = int(up)
+        self.down = int(down)
         self.page = int(page)
 
     @staticmethod
     def parse_line(line):
         try:
-            alpha, left, bottom, right, top, page = line.split(' ')
+            text, left, down, right, up, page = line.split(' ')
         except ValueError as e:
             sys.stderr.write('line is disorted: "%s"' % line)
             raise e
-        return cardline(alpha, right, left, top, bottom, page)
+        return cardline(text, left, down, right, up, page)
 
     def __repr__(self):
         return ' '.join(str(x) for x in [
-            self.alpha,
+            self.text,
             self.left,
-            self.bottom,
-            self.top,
+            self.down,
+            self.up,
             self.page])
 
 
