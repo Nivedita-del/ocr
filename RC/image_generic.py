@@ -34,7 +34,7 @@ def abnorm2(a):
 def abnorm(a):
     return np.sqrt( abnorm2(a) )
 
-def homotrans(H, x, y):
+def homotransform(H, x, y):
     xs = H[0, 0]*x + H[0, 1]*y + H[0, 2]
     ys = H[1, 0]*x + H[1, 1]*y + H[1, 2]
     s  = H[2, 0]*x + H[2, 1]*y + H[2, 2]
@@ -198,7 +198,7 @@ class RectSelector:
 def grouper(n, iterable, fillvalue=None):
     '''grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx'''
     args = [iter(iterable)] * n
-    if PY3:
+    if Python3:
         output = it.zip_longest(fillvalue=fillvalue, *args)
     else:
         output = it.izip_longest(fillvalue=fillvalue, *args)
@@ -210,7 +210,7 @@ def mosaic(w, imgs):
     imgs -- images (must have same size and format)
     '''
     imgs = iter(imgs)
-    if PY3:
+    if Python3:
         img0 = next(imgs)
     else:
         img0 = imgs.next()

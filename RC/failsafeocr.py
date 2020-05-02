@@ -119,7 +119,7 @@ text0 = text1[lineno + 1:]
 print(text0)
 
 
-def findword(textlist, wordstring):
+def findtheword(textlist, wordstring):
     lineno = -1
     for wordline in textlist:
         xx = wordline.split()
@@ -185,7 +185,7 @@ try:
     mfgd = mfgd.replace(" ", "")
 
 
-    text0 = findword(text1, '(Certificate|certificate|of|uf|af|regiestration|registration|regiesteration|regis|redgeNO|regd|no|reged)$')
+    text0 = findtheword(text1, '(Certificate|certificate|of|uf|af|regiestration|registration|regiesteration|regis|redgeNO|regd|no|reged)$')
     panline = text0[0]
     pan = panline.rstrip()
     pan = pan.lstrip()
