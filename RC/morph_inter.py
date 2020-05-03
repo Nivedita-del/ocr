@@ -1,7 +1,7 @@
 
 from __future__ import print_function
 import sys
-PY3 = sys.version_info[0] == 3
+Python3 = sys.version_info[0] == 3
 
 import numpy as np
 import cv2 as cv
@@ -17,7 +17,7 @@ if __name__ == '__main__':
     try:
         fn = sys.argv[1]
     except:
-        fn = '../data/baboon.jpg'
+        fn = '../data/temp.jpg'
 
     img = cv.imread(fn)
 
@@ -30,7 +30,7 @@ if __name__ == '__main__':
     modes = cycle(['erode/dilate', 'open/close', 'blackhat/tophat', 'gradient'])
     str_modes = cycle(['ellipse', 'rect', 'cross'])
 
-    if PY3:
+    if Python3:
         cur_mode = next(modes)
         cur_str_mode = next(str_modes)
     else:
