@@ -123,18 +123,6 @@ try:
 except:
     pass
 
-'''try:
-	for wordline in panline:
-		# panline now contains the two objects as string, which will be converted to a list using split
-		xx = wordline.split() # Splits the final two objects of the actual PAN Card number & Signature Entity
-		if ([w for w in xx if re.search('(Number|umber|Account|ccount|count|Permanent|ermanent|manent)$', w)]):
-			pan = panline[panline.index(wordline)+1]
-			break
-	pan = pan.replace(" ", "")
-except:
-	pass'''
-
-# Making tuples of data
 data = {}
 data['Name'] = name
 data['Engine number'] = enino
