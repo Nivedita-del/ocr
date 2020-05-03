@@ -54,7 +54,7 @@ def deskew(file_name, angle):
     return cv2.getRectSubPix(rotated, (sizey, sizex), center)
 
 
-file_path = 'D:\\September\\3 PAN Card OCR - WIP\\pranjal1.png'
+file_path = '<path>'
 angel = compute_skew(file_path)
 dst = deskew(file_path, angel)
 cv2.imshow("Result", dst)
