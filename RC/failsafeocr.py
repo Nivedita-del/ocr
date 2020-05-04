@@ -66,11 +66,7 @@ text = file.read()
 
 text = ftfy.fix_text(text)
 text = ftfy.fix_encoding(text)
-'''for god_damn in text:
-    if nonsense(god_damn):
-        text.remove(god_damn)
-    else:
-        print(text)'''
+
 # print(text)
 
 
@@ -220,6 +216,7 @@ with open('data.json', encoding='utf-8') as data_file:
 
 with open('data.json', 'r', encoding='utf-8') as f:
     ndata = json.load(f)
+
 
 print('\t', "|+++++++++++++++++++++++++++++++|")
 print('\t', '|', '\t', ndata['Name'])
