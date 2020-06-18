@@ -133,6 +133,9 @@ def findtheword(textlist, wordstring):
 
 t=re.search("ph:", 'ph')
 print(t)
+
+enino = re.findall(r'\b[6789]\d{9}\b', text, flags=0)
+
 try:
 
     name = text0[-1]
@@ -144,15 +147,15 @@ try:
     name = name.replace("1", "I")
     name = re.sub('[^a-zA-Z] +', ' ', name)
 
-    enino = text0[11]
-    enino = enino.rstrip()
-    enino = enino.lstrip()
-    enino = enino.replace("8", "S")
-    enino = enino.replace("0", "O")
-    enino = enino.replace("6", "G")
-    enino = enino.replace("1", "I")
-    enino = enino.replace("\"", "A")
-    enino = re.sub('[^a-zA-Z] +', ' ', enino)
+    #enino = text0[11]
+    #enino = enino.rstrip()
+    #nino = enino.lstrip()
+    #enino = enino.replace("8", "S")
+    ##enino = enino.replace("0", "O")
+    #enino = enino.replace("6", "G")
+    #enino = enino.replace("1", "I")
+    #enino = enino.replace("\"", "A")
+    #enino = re.sub('[^a-zA-Z] +', ' ', enino)
 
     regd = text0[2]
     regd = regd.rstrip()

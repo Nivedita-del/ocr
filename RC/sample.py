@@ -8,10 +8,17 @@ import re
 import tempfile
 from pdf2image import convert_from_path, convert_from_bytes
 
+from RC.failsafeocr import to_unicode
+
+while(True):
+    if (os.listdir("data/")):
+        continue
+    else:
+        os.mkdir("./data")
 
 with tempfile.TemporaryDirectory() as path:
-    images = convert_from_path('datasets/MktPlace-Myntra.pdf', output_folder='data')
-image = convert_from_bytes(open('datasets/MktPlace-Myntra.pdf', 'rb').read())
+    images = convert_from_path('datasets/MktPlace-Myntra.pdf', output_folder='data', fmt='jpg')
+images = convert_from_bytes(open('datasets/MktPlace-Myntra.pdf', 'rb').read())
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True,
@@ -52,28 +59,41 @@ cv2.imwrite(filename, gray)
 text = pytesseract.image_to_string(Image.open(filename), lang='eng')
 os.remove(filename)
 #print(text)
+from os import listdir
+import shutil
+dir="data/"
+shutil.rmtree(dir)
+
+
+#temp = os.listdir(dir)
+#for files in temp:
+#    if files.endswith("*.*"):
+#        os.remove(os.path.join(dir, files))
+print("deleted files")
 
 #gray = cv2.resize(gray, (1000, 1000))
 
 #cv2.imshow("output", gray)
 #cv2.waitKey(0)
 
-string = ""
 
-ph1 = re.search(r'\b[6789]\d{9}\b', text, flags=0)
-ph2 = re.search(r'\b[7689]\d{9}\b', text, flags=0)
-ph3 = re.search(r'\b[8679]\d{9}\b', text, flags=0)
-ph4 = re.search(r'\b[9689]\d{9}\b', text, flags=0)
+ph1 = re.findall(r'\b[6789]\d{9}\b', text, flags=0)
+print(ph1[0])
 
-        if ph1:
-            p=ph1.group(0)
-            print(p)
-        elif ph2:
-            p = ph2.group(0)
-            print(p)
-        elif ph3:
-            p = ph3.group(0)
-            print(p)
-        elif ph4:
-            p = ph4.group(0)
-            print(p)
+data={}
+
+data["Phone Number"] = ph1
+
+import json
+import io
+
+jsondata=json.load(data)
+
+
+with io.open('data.json', 'w', encoding='utf-8') as outfile:
+    str_ = json.dumps(data, indent=4, sort_keys=True, separators=(',', ': '), ensure_ascii=False)
+    outfile.write(to_unicode(str_))
+
+with open('data.json', encoding='utf-8') as data_file:
+    data_loaded = json.load(data_file)
+
