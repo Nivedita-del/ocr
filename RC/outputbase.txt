@@ -1,0 +1,122 @@
+09/06/2020 Browntape.com | Orders | HtmlInvoice
+
+Original for Receipient
+
+Duplicate for Supplier/Transporter
+
+ 
+
+ 
+
+TAX INVOICE Triplicate for Supplier
+
+ITU TAMAA i
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+38826532-601 1257816 MLO380675700
+Milastar Retail Pvt Ltd ™ Myntra API
+GSTIN 1 29AAKCA223551ZK Invoice Date : 8 Jun 2020
+Branch : Karnataka Invoice No. : SSINV/17-18/0887480
+PAN =NA Reference No. : 38826532-601 1257816
+Place of Supply AS Payment Type : PAID
+Customer Name Billing Address Shipping Address
+Saswati Saswati Saswati
+
+Anusuya Apartment flat no 4 D knanamukh, Anusuya Apartment flat no 4 D knanamukh,
+Customer GSTIN Khanamukh , Guwahati, AS, India, 781014 Khanamukh , Guwahati, AS, India, 781014
+Ph: 6002291323 Ph: 6002291323
+
+Pre-Tax Pre-Tax| pre-tax Taxable
+
+Unit Unit -,
+Discount| Shipping Oni NR tans
+
+(INR) (INR)
+
+Desc. of Goods
+
+ 
+
+Z|1880COREABLUE032DD
+(ZI1880COREABLUE032DD) 42.86 384.76
+
+ 
+
+ 
+
+ 
+
+42.86 0 384.76
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Taxable Amount
+
+ 
+
+Total Tax
+
+ 
+
+Invoice Total
+
+ 
+
+Invoice Total(In Words) | INR Four Hundred and Four
+
+We hope that you like the iterns that you have received. If there is anything about your products that you
+are not happy with, please let us know using the contact details below and we will be happy to help you.
+For Milastar Retail Pvt Ltd Authorised
+
+We would be grateful for your positive feedback about our service. Signatory
+
+Thank you for your business, we hope to see you again soon!
+
+ 
+
+ 
+
+Warehouse Address: Mila Star Retail Private Limited, Warehouse no 2,
+Company Address: Milastar Retail Pvt Ltd, Bengaluru, Karnataka, 560071 survery no 10, Makali, Dasanapura Hobli, Opp to himalay drug, Bengaluru,
+Karnataka, 562123, India, manjunath@zivame.com, 09741636046
+
+ 
+
+app.browntape.com/orders/html_invoice/5561154968 Vi

@@ -8,8 +8,14 @@ import re
 import io
 import json
 import ftfy
+import tempfile
+from pdf2image import convert_from_path, convert_from_bytes
+
 
 from numpy import unicode
+with tempfile.TemporaryDirectory() as path:
+    images = convert_from_path('datasets/MktPlace-Myntra.pdf', output_folder='data')
+image = convert_from_bytes(open('datasets/MktPlace-Myntra.pdf', 'rb').read())
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True,
@@ -88,7 +94,7 @@ text4 = []
 
 
 # Searching for PAN
-lines = text.split('\n')
+lines = text.split(',')
 for lin in lines:
     s = lin.strip()
     s = lin.replace('\n', '')
@@ -102,9 +108,9 @@ text1 = list(filter(None, text1))
 lineno = 0
 
 for wordline in text1:
-    xx = wordline.split('\n')
+    xx = wordline.split(',')
     if ([w for w in xx if re.search(
-            '(Certificate|certificate|of|uf|af|regiestration|registration|regiesteration|regis|redgeNO|regd|no|reged)$',
+            '(Customer Details| customer detials| costomer| details| detials| datiels|)$',
             w)]):
         text1 = list(text1)
         lineno = text1.index(wordline)
@@ -125,10 +131,11 @@ def findtheword(textlist, wordstring):
             return textlist
     return textlist
 
-
+t=re.search("ph:", 'ph')
+print(t)
 try:
 
-    name = text0[0]
+    name = text0[-1]
     name = name.rstrip()
     name = name.lstrip()
     name = name.replace("8", "B")
@@ -137,7 +144,7 @@ try:
     name = name.replace("1", "I")
     name = re.sub('[^a-zA-Z] +', ' ', name)
 
-    enino = text0[1]
+    enino = text0[11]
     enino = enino.rstrip()
     enino = enino.lstrip()
     enino = enino.replace("8", "S")
@@ -181,7 +188,7 @@ try:
     mfgd = mfgd.replace(" ", "")
 
 
-    text0 = findtheword(text1, '(Certificate|certificate|of|uf|af|regiestration|registration|regiesteration|regis|redgeNO|regd|no|reged)$')
+    text0 = findtheword(text1, '(Customer Name| customer name| costomer| nome| nam3| hame| home)$')
     panline = text0[0]
     pan = panline.rstrip()
     pan = pan.lstrip()
