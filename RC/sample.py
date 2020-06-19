@@ -8,10 +8,10 @@ import re
 import tempfile
 from pdf2image import convert_from_path, convert_from_bytes
 
-from RC.failsafeocr import to_unicode
+#from RC.failsafeocr import to_unicode
 
-while(True):
-    if (os.listdir("data/")):
+while((os.path.isdir("data")) == False):
+    if (os.path.isdir("data")):
         continue
     else:
         os.mkdir("./data")
@@ -20,14 +20,17 @@ with tempfile.TemporaryDirectory() as path:
     images = convert_from_path('datasets/MktPlace-Myntra.pdf', output_folder='data', fmt='jpg')
 images = convert_from_bytes(open('datasets/MktPlace-Myntra.pdf', 'rb').read())
 
-ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", required=True,
-                help="path to input image to be OCR'd")
-ap.add_argument("-p", "--preprocess", type=str, default="thresh",
-                help="type of preprocessing to be done, choose from blur, linear, cubic or bilateral")
-args = vars(ap.parse_args())
+#ap = argparse.ArgumentParser()
+#ap.add_argument("-i", "--image", required=True,
+#                help="path to input image to be OCR'd")
+#ap.add_argument("-p", "--preprocess", type=str, default="thresh",
+#                help="type of preprocessing to be done, choose from blur, linear, cubic or bilateral")
+#args = vars(ap.parse_args())
 
-image = cv2.imread(args["image"])
+
+filename = "data/{}.jpg".format(os.getpid())
+print(filename)
+image = cv2.imread(filename)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 if args["preprocess"] == "thresh":
@@ -58,16 +61,17 @@ cv2.imwrite(filename, gray)
 
 text = pytesseract.image_to_string(Image.open(filename), lang='eng')
 os.remove(filename)
-#print(text)
+print(text)
 from os import listdir
 import shutil
 dir="data/"
 shutil.rmtree(dir)
 
-
 #temp = os.listdir(dir)
+#for file in temp:
+#    os.rename('data/*.jpg', 'data/sam.jpg')
 #for files in temp:
-#    if files.endswith("*.*"):
+#    if files.endswith("*.jpg"):
 #        os.remove(os.path.join(dir, files))
 print("deleted files")
 
@@ -79,7 +83,8 @@ print("deleted files")
 
 ph1 = re.findall(r'\b[6789]\d{9}\b', text, flags=0)
 print(ph1[0])
-
+name = re.search('^(Customer Name)*$', text, flags=0)
+print(name)
 data={}
 
 data["Phone Number"] = ph1
@@ -87,13 +92,13 @@ data["Phone Number"] = ph1
 import json
 import io
 
-jsondata=json.load(data)
+#jsondata=json.load(data)
 
 
-with io.open('data.json', 'w', encoding='utf-8') as outfile:
-    str_ = json.dumps(data, indent=4, sort_keys=True, separators=(',', ': '), ensure_ascii=False)
-    outfile.write(to_unicode(str_))
+#with io.open('data.json', 'w', encoding='utf-8') as outfile:
+   # str_ = json.dumps(data, indent=4, sort_keys=True, separators=(',', ': '), ensure_ascii=False)
+    #outfile.write(to_unicode(str_))
 
-with open('data.json', encoding='utf-8') as data_file:
-    data_loaded = json.load(data_file)
+#with open('data.json', encoding='utf-8') as data_file:
+   # data_loaded = json.load(data_file)
 

@@ -94,7 +94,7 @@ text4 = []
 
 
 # Searching for PAN
-lines = text.split(',')
+lines = text.split('\n')
 for lin in lines:
     s = lin.strip()
     s = lin.replace('\n', '')
@@ -132,84 +132,43 @@ def findtheword(textlist, wordstring):
     return textlist
 
 t=re.search("ph:", 'ph')
-print(t)
+#print(t)
 
 enino = re.findall(r'\b[6789]\d{9}\b', text, flags=0)
+enino = enino[0]
 
+name = re.sub('[^a-zA-Z] +', ' ', text)
+if (text.__contains__("Customer Name Billing Address Shipping Address")):
+    print('')
 try:
 
-    name = text0[-1]
+    name = text0[11]
     name = name.rstrip()
     name = name.lstrip()
-    name = name.replace("8", "B")
-    name = name.replace("0", "D")
-    name = name.replace("6", "G")
-    name = name.replace("1", "I")
+    name = list(name.split(' '))
+    name = name[0]
     name = re.sub('[^a-zA-Z] +', ' ', name)
 
-    #enino = text0[11]
-    #enino = enino.rstrip()
-    #nino = enino.lstrip()
-    #enino = enino.replace("8", "S")
-    ##enino = enino.replace("0", "O")
-    #enino = enino.replace("6", "G")
-    #enino = enino.replace("1", "I")
-    #enino = enino.replace("\"", "A")
-    #enino = re.sub('[^a-zA-Z] +', ' ', enino)
-
-    regd = text0[2]
+    regd = text0[12]
     regd = regd.rstrip()
     regd = regd.lstrip()
-    regd = regd.replace('l', '/')
-    regd = regd.replace('L', '/')
-    regd = regd.replace('I', '/')
-    regd = regd.replace('i', '/')
-    regd = regd.replace('|', '/')
-    regd = regd.replace('\"', '/1')
-    regd = regd.replace(" ", "")
+    regd = list(regd.split(','))
+    regd = regd[0]
 
-    vin = text0[3]
+    vin = text0[13]
     vin = vin.rstrip()
     vin = vin.lstrip()
-    vin = vin.replace('l', '/')
-    vin = vin.replace('L', '/')
-    vin = vin.replace('I', '/')
-    vin = vin.replace('i', '/')
-    vin = vin.replace('|', '/')
-    vin = vin.replace('\"', '/1')
-    vin = vin.replace(" ", "")
+    vin = vin.replace("Customer GSTIN ", "")
 
-    mfgd = text0[4]
-    mfgd = mfgd.rstrip()
-    mfgd = mfgd.lstrip()
-    mfgd = mfgd.replace('l', '/')
-    mfgd = mfgd.replace('L', '/')
-    mfgd = mfgd.replace('I', '/')
-    mfgd = mfgd.replace('i', '/')
-    mfgd = mfgd.replace('|', '/')
-    mfgd = mfgd.replace('\"', '/1')
-    mfgd = mfgd.replace(" ", "")
-
-
-    text0 = findtheword(text1, '(Customer Name| customer name| costomer| nome| nam3| hame| home)$')
-    panline = text0[0]
-    pan = panline.rstrip()
-    pan = pan.lstrip()
-    pan = pan.replace(" ", "")
-    pan = pan.replace("\"", "")
-    pan = pan.replace(";", "")
-    pan = pan.replace("%", "L")
 
 except:
     pass
 
 data = {}
 data['Name'] = name
-data['Engine number'] = enino
-data['Registration data'] = regd
-data['Vin no'] = vin
-data['Manufacture data'] = mfgd
-
+data['Ph No'] = enino
+data['Address Line 1'] = regd
+data['Address Line 2'] = vin
 try:
     to_unicode = unicode
 except NameError:
@@ -222,8 +181,6 @@ with io.open('data.json', 'w', encoding='utf-8') as outfile:
 with open('data.json', encoding='utf-8') as data_file:
     data_loaded = json.load(data_file)
 
-# print(data == data_loaded)
-
 with open('data.json', 'r', encoding='utf-8') as f:
     ndata = json.load(f)
 
@@ -231,11 +188,11 @@ with open('data.json', 'r', encoding='utf-8') as f:
 print('\t', "|+++++++++++++++++++++++++++++++|")
 print('\t', '|', '\t', ndata['Name'])
 print('\t', "|-------------------------------|")
-print('\t', '|', '\t', ndata['Engine number'])
+print('\t', '|', '\t', ndata['Ph No'])
 print('\t', "|-------------------------------|")
-print('\t', '|', '\t', ndata['Registration data'])
+print('\t', '|', '\t', ndata['Address Line 1'])
 print('\t', "|-------------------------------|")
-print('\t', '|', '\t', ndata['Vin no'])
+print('\t', '|', '\t', ndata['Address Line 2'])
 print('\t', "|-------------------------------|")
-print('\t', '|', '\t', ndata['Manufacture data'])
-print('\t', "|+++++++++++++++++++++++++++++++|")
+
+
